@@ -1,0 +1,55 @@
+<h1>Tomb Door Puzzle Solver</h1>
+<p>
+There is a large number of magnetic plates on the floor leading 
+to the doors. Every plate has one word written on it. The plates 
+must be arranged into a sequence in such a way that every word 
+begins with the same letter as the previous word ends. For example, 
+the word ream can be followed by the word motorola.
+</p>
+
+<p>
+Input a list of words into the solver below and press submit.  The solver
+will tell you whether or not the words can be arranged in such a fashion.
+<p>
+
+<% if @word_list != nil %>
+<div class="row">
+	<div class="span6">
+		<h3>Input</h3>
+		<div class="span12">
+			<div class="well">
+				<%= @word_list %>
+			</div>
+		</div>
+
+		<% if @output == [] %>
+			<h3>Output</h3>
+			<div class="span12">
+				<div class="well">
+					There is no solution.
+				</div>
+			</div>
+		<% else %>
+			<h3>Output</h3>
+			<div class="span12">
+				<div class="well">
+					Solution: <%= @output.inspect %>
+				</div>
+			</div>
+		<% end %>
+
+	</div>
+</div>
+<% end %>
+
+<div class="row">
+	<div class="span6">
+		<div class="well">
+			<%= form_tag do %>
+			  <%= label_tag(:q, "Word List (separated by newline or space):") %> <br />
+			  <%= text_area_tag(:q, @input, :size => '30x15') %>
+			  <%= submit_tag("Submit", :class => "btn btn-large btn-primary") %>
+			<% end %>
+		</div>
+	</div>
+</div>
