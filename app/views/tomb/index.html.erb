@@ -1,6 +1,6 @@
 <h1>Tomb Door Puzzle Solver</h1>
 <p>
-There is a large number of magnetic plates on the floor leading 
+There are a large number of magnetic plates on the floor leading 
 to the doors. Every plate has one word written on it. The plates 
 must be arranged into a sequence in such a way that every word 
 begins with the same letter as the previous word ends. For example, 
@@ -18,7 +18,7 @@ will tell you whether or not the words can be arranged in such a fashion.
 		<h3>Input</h3>
 		<div class="span12">
 			<div class="well">
-				<%= @word_list %>
+				<%= @word_list.join(" ") %>
 			</div>
 		</div>
 
@@ -33,7 +33,7 @@ will tell you whether or not the words can be arranged in such a fashion.
 			<h3>Output</h3>
 			<div class="span12">
 				<div class="well">
-					Solution: <%= @output.inspect %>
+					Solution: <%= @output.join(" ") %>
 				</div>
 			</div>
 		<% end %>
